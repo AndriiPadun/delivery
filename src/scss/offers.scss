@@ -62,9 +62,7 @@ align-self: center;
 text-align: center;
 display: flex;
 flex-direction: column;
-&__card__tariff{
 
-}
 @include adaptiveValue("font-size",24,21);
 font-family: "MontserratAlternates";
 font-style: normal;
