@@ -1,0 +1,255 @@
+//====================================================================================================
+
+@mixin languagestyle(){
+	text-transform: uppercase;
+	letter-spacing: 0.005em;
+}
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	background:	#FAFAFA;
+	z-index: 100;
+	// .header__container
+
+	&__container {
+		min-height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("padding-top",52, 26);
+		@include adaptiveValue("padding-bottom",10, 6);
+		@media screen and (min-width:1900px) {
+			max-width: 100%;
+		}
+	}
+
+	// .header__logo
+
+	&__logo {
+		display: flex;
+		column-gap: rem(6);
+		align-items: flex-end;
+		@include adaptiveValue("margin-right", 32, 20, 0, 1400, 1150);
+		@include adaptiveValue("margin-right", 20, 15, 0, 1150, 780);
+	}
+
+
+	// .header__language
+
+	&__language {
+		position: relative;
+		z-index: 10;
+		@include adaptiveValue("margin-right",101, 30, 0, 1400, 1150);
+		@include adaptiveValue("margin-right",30, 20, 0, 1150, 780);
+	}
+
+	// .header__body
+
+	&__body {
+		font-size: rem(18);
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap",21, 15, 0, 1221, 1024);
+		
+		transition: left 0.4s ease;
+	}
+
+	// .header__nav
+
+	&__nav {
+		
+	}
+
+	// .header__menu
+
+	&__menu {
+		display: flex;
+		column-gap: rem(15);
+		align-items: center;
+	}
+
+	// .header__item-one
+
+	&__item-one {
+		transition: color  0.3s ease-in;
+		line-height: 150%;
+	}
+
+	// .header__phone
+
+	&__phone {
+		display: flex;
+		letter-spacing: 0.005em;
+		color: #000000;
+		align-items: center;
+		column-gap: rem(6);
+		line-height: 156%;
+		transition: color  0.3s ease-in;
+	}
+
+	// .header__button
+
+	&__button {
+		
+	}
+}
+.logo {
+	position: relative;
+	z-index: 10;
+	font-family: 'Comfortaa';
+	font-weight: 700;
+	@include adaptiveValue("font-size", 28, 20, 0, 1150, 780);
+	line-height: 114.285714%; /* 32/28 */
+	font-style: normal;
+	// .logo__start
+
+	&__start {
+		color: $mainColor;
+	}
+
+	// .logo__image
+
+	&__image {
+		width: rem(45);
+		height: rem(45);
+		& use{
+			fill: #FDB90B;;
+		}
+	}
+
+	// .logo__end
+
+	&__end {
+		color: $secondcolor;
+	}
+}
+
+// 
+// .button {
+// 	color: #0C485E;
+// 	line-height: 150%;
+// 	padding: 7px 20px;
+// 	@include adaptiveValue("padding-right",20,10,0,1221,1000);
+// 	@include adaptiveValue("padding-left",20,10,0,1221,1010);
+// 	border: 2px solid #0C485E;
+// 	border-radius: 9px;
+// 	transition: background, box-shadow,  0.3s ease-in;
+// 	font-weight: 700;
+// }
+
+
+
+// Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: 1023.98px) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #A8C1D8;;
+			border-radius: 3px;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+			
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+.menu-open{
+	.header__body{
+		left: 0;
+	}
+}
+@media (max-width: 1023.98px){
+	.header__body{
+		position: fixed;
+		top: 0;
+		padding: 120px  20px 20px 20px;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		// background-color: #FFD678;
+		background: rgba(103, 103, 103, 0.95);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;
+		@include adaptiveValue("font-size", 30, 20,0, 1010, 320);
+		overflow: auto;
+		z-index: 2;
+		&::before{
+			content: "";
+			width: 100%;
+			height: 97px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background:	#FAFAFA;
+		}
+	}
+	.header__nav{
+		display: flex;
+		flex-direction: column;
+	}
+	.header__menu{
+		flex-direction: column;
+		row-gap: 20px;
+		align-items: center;
+	}
+	.header__item-one{
+		align-items: center;
+	}
+	.header__phone{
+		align-items: center;
+	}
+	.header__button{
+		align-items: center;
+	}
+	.language{
+		font-size: rem(18);
+		flex-direction: row;
+	}
+}

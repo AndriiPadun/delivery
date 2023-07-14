@@ -1,0 +1,82 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__block-form"  data-show ="1">
+				<div class="popup__title">
+					Отримуйте <br>що завгодно вже зараз!
+				</div>
+				<form action="#" class="popup__form form-popup">
+					<div class="popup__choice"><span class="choice">Обраний пакет:<span class="choice__name"></span></span><a href="#" id="change" class="popup__link">Змінити</a></div>
+					<div class="form-popup__block">
+						<label for="name">Ваше ім’я</label>
+						<input id="name" type="text" class="form-popup__input" placeholder="Наприклад, Петро Петрович" required>
+					</div>
+					<div class="form-popup__block">
+						<label for="phone">Ваш номер телефону </label>
+						<input id="phone" type="phone" class="form-popup__input" placeholder="Наприклад, +380 ХХ ХХХ ХХ ХХ" required>
+					</div>
+					<div class="form-popup__check">
+						<input type="checkbox" name="rules" id="rules" class="form-popup__checkbox" required>
+						<span>Погоджуюсь з <a href="#" class="popup__link">умовами сервісу</a></span>
+					</div>
+					<button type="submit" class="button-yellow form-popup__button">Зареєструватися</button>
+				</form>
+			</div>
+			<div class="block-tariff" data-show="2">
+				<div class="popup__title">
+					Oберіть свій пакет
+				</div>
+				<div class="block-tariff__cards">
+					<div  class="block-tariff__item ">
+						<div class="block-tariff__item-name">
+							<span class="block-tariff__title">«10 доставок на місяць»</span>
+							<span>100грн / місяць</span>
+						</div>
+						<span class="block-tariff__chosen">Обрано</span>
+					</div>
+					<div  class="block-tariff__item ">
+						<div class="block-tariff__item-name">
+							<span class="block-tariff__title">«100 доставок на місяць»</span>  
+							<span>1000грн / місяць</span>
+						</div>
+						<span class="block-tariff__chosen">Обрано</span>
+					</div>
+					<div  class="block-tariff__item">
+						<div class="block-tariff__item-name">
+							<span class="block-tariff__title">«Безлім (майже)»</span>   
+							<span>1500грн / місяць</span>
+						</div>
+						<span class="block-tariff__chosen">Обрано</span>
+					</div>
+				</div>
+				<a href="#" class="popup__link block-tariff__change _icon-arrow">Змінити план</a>
+			</div>
+
+			<div class="block-check" data-show="2">
+				<div class="popup__title">Перевірка <br> заповнених полів</div>
+				<div class="block-check__validation">
+					<p class="block-check__field">Обраний пакет:<span id="tariff"></span></p>
+					<p class="block-check__field">Ваше ім’я:<span id="full-name"></span></p>
+					<p class="block-check__field">Ваш телефон:<span id="phone-number"></span></p>
+					<p class="block-check__rules">Ви погодилися з нашими <a href="#" class="popup__link">умовами сервісу</a></p>
+				</div>
+				<div class="block-check__btns">
+					<button type="button" class="button block-check__button" id="back-to">Повернутися до форми реєстрації</button>
+					<button type="button" class="button-yellow block-check__button" id="finish" >Все вірно</button>
+				</div>
+			</div>
+			<div class="block-finish" data-show="2">
+				<div class="block-finish__content">
+					<img class="block-finish__img" src="@img/popup/Elephant.png" alt="Elephant">
+					<div class="popup__title block-finish__title">
+						Чудово!
+					</div>
+					<p class="block-finish__text">Ми надішлемо вам листа з подальшими інструкціями стосовно реєстрації!
+					</p>
+					<button data-close type="button" class="button-yellow block-finish__button" >Закрити вікно</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

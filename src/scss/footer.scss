@@ -1,0 +1,69 @@
+//====================================================================================================
+.footer {
+    background: #F4F5F7;
+    @include adaptiveValue("padding-top",147,27);
+    @include adaptiveValue("padding-bottom",57,17);
+    // .footer__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @media screen and (max-width:$mobile) {
+            flex-direction: column;
+        }
+    }
+
+    // .footer__rights
+
+    &__rights {
+        color: #8CAECC;
+        font-size: 15px;
+        transition: color  0.3s ease-in;
+        line-height: 126.666667%; /* 19px/15 */
+    }
+
+    // .footer__design
+
+    &__design {
+        color: #8CAECC;
+        font-size: 15px;
+        transition: color  0.3s ease-in;
+        line-height: 126.666667%; /* 19px/15 */
+    }
+
+    // .footer__social
+
+    &__social {
+        display: flex;
+        column-gap: 17px;
+        
+        @media screen and (max-width:$mobile) {
+            column-gap: 14px;
+        }
+    }
+
+    // .footer__facebook
+
+    &__facebook {
+        color: $secondcolor;
+        transition: color  0.3s ease-in;
+    }
+
+    // .footer__insta
+
+    &__insta {
+        transition: color  0.3s ease-in;
+        color: $secondcolor;
+    }
+
+    // .footer__youtube
+
+    &__youtube {
+        transition: color  0.3s ease-in;
+        color: $secondcolor;
+    }
+}
+
+
+//====================================================================================================

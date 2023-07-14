@@ -1,0 +1,3 @@
+.page{
+    @include adaptiveValue("padding-top", 107, 77);
+}

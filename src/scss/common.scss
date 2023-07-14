@@ -1,0 +1,147 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.button {
+	color: #0C485E;
+	line-height: 150%;
+	padding: 7px 20px;
+	@include adaptiveValue("padding-right",20,10,0,1221,1010);
+	@include adaptiveValue("padding-left",20,10,0,1221,1010);
+	border: 2px solid #0C485E;
+	border-radius: 9px;
+	transition: all  0.3s ease-in;
+	font-weight: 700;
+	&:focus		{
+		border: none;
+		outline: 2px solid $secondcolor;
+	}
+}
+.button-yellow{
+font-weight: 700;
+line-height: 150%;
+letter-spacing: 0.005em;
+color: #FFFFFF;
+padding: 7px 20px;
+background: #FDB90B;
+box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.12), inset 1px 1px 5px rgba(191, 144, 22, 0.45);
+border-radius: 9px;
+transition: all  0.3s ease-in;
+text-align: center;
+&:focus{
+	outline: 4px solid rgba(253, 185, 11, 0.35);
+}
+&:hover{
+background: #FFD678;
+mix-blend-mode: normal;
+box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.12), inset 1px 1px 5px rgba(191, 144, 22, 0.45);
+}
+&:active{
+	background: #321913;
+box-shadow: 1px 1px 5px 0px #5F2C20 inset, 1px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+}
+.title {
+font-family: 'MontserratAlternates';
+font-style: normal;
+font-weight: 700;
+@include adaptiveValue("font-size",60,34);
+line-height: 100%;
+letter-spacing: -0.01em;
+color: $mainColor;
+}
+.bold-text{
+	font-weight: 600;
+}
+@media (hover: hover){
+	.button:hover{
+			background: $secondcolor;
+			mix-blend-mode: normal;
+			box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.12), inset 1px 1px 5px rgba(191, 144, 22, 0.45);
+		}
+	.header__item-one:hover{
+		color: #FB5408;
+	}
+	.header__phone:hover{
+		color: #FB5408;
+	}
+	.language__en:hover,.language__ua:hover{
+		color: #FB5408;
+	}
+	.delivery__box:hover{
+		&::before{
+			opacity: 1;
+		}
+		
+	}
+	.scroll-down:hover{
+		& .scroll-down__text,
+		.scroll-down__arrow{
+			color: #FB5408;
+		}
+	}
+	._icon-arrow:hover::before {
+		color: #FB5408;
+	}
+	.block-tariff__item:hover{
+		background-color: $secondcolor;
+	}
+	.popup__link:hover{
+		color: #FB5408;
+	}
+	
+	@media screen and (min-width:$mobile) {
+		.content__card_everything:hover{
+			background: url('@img/сapabilities/hover/everything.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		   
+		}
+		.content__card_everywhere:hover{
+		 	background: url('@img/сapabilities/hover/everywhere.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		}
+		.content__card_time:hover{
+			background: url('@img/сapabilities/hover/time.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		}
+		.content__card_cheeper:hover{
+			background: url('@img/сapabilities/hover/cheeper.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		}
+		.content__card_free:hover{
+			background: url('@img/сapabilities/hover/free.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		}
+		.content__card_delivery:hover{
+			background: url('@img/сapabilities/hover/delivery.svg');
+			background-repeat: no-repeat;
+		   background-size: cover;
+		}
+	}
+	.footer__rights:hover{
+		color: #0C485E;
+	}
+    .footer__design:hover{
+		color: #0C485E;
+	}
+
+
+    .footer__facebook:hover{
+		color: #FB5408;
+	}
+
+
+    .footer__insta:hover{
+		color: #FB5408;
+	}
+
+    .footer__youtube:hover{
+		color: #FB5408;
+	}
+	.form-popup__link:hover{
+		color: #FB5408;
+	}
+
+}

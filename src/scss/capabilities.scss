@@ -1,0 +1,92 @@
+.capabilities {
+    background-color: #FAFAFA;
+    @include adaptiveValue("padding-top",82,53);
+    @include adaptiveValue("padding-bottom",85,52);
+    // .capabilities__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .capabilities__title
+
+    &__title {
+        text-align: center;
+        @include adaptiveValue("margin-bottom",65,34);
+    }
+
+    // .capabilities__content
+
+    &__content {
+        width: 100%;
+    }
+}
+
+.content {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+   @media screen and (max-width:$tablet) {
+    grid-template-columns: repeat(2, 1fr);
+   }
+   @media screen and (max-width:$mobile) {
+    grid-template-columns: repeat(1, 1fr);
+   }
+    // .content__card
+
+    &__card {
+       border-radius: 9px;
+       padding: 55px 26px;
+       display: flex;
+       flex-direction: column;
+       gap: 24px;
+       align-items: center;
+       transition: all 0.3s ease-in;
+       @media screen and (max-width:$mobile) {
+        flex-direction: row-reverse;
+        padding: 2px 5px;
+        justify-content: space-between;
+    }
+       @media screen and (min-width:$mobile) {
+        text-align: center;
+    }
+    
+    }
+
+    // .content__image
+
+    &__image {
+        max-width: 75px;
+        max-height: 75px;
+        @media screen and (max-width:$mobile) {
+            max-width: 40px;
+            max-height: 40px;
+        }
+    }
+
+    // .content__text
+
+    &__text {
+        font-family: MontserratAlternates;
+        @include adaptiveValue("font-size",32,15);
+        line-height: 131%; 
+        letter-spacing: -0.01em;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width:$mobile) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 224px;
+            column-gap: 5px;
+        }
+    }
+
+    // .content__bold-text
+
+    &__bold-text {
+        font-weight: 600;
+    }
+}

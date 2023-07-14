@@ -1,0 +1,82 @@
+.about-us {
+background: #F4F5F7;
+background-image:  url('../img/about-us/BG.svg');
+background-repeat: no-repeat;
+background-position: 46% 0;
+background-size: contain;
+@media screen and (max-width:986px) {
+    background-position: bottom;
+}
+@media screen and (max-width:$mobileSmall) {
+    background-image:  url('../img/about-us/BGs.svg');
+    
+}
+   @include adaptiveValue("padding-top",204,44);
+   @include adaptiveValue("padding-bottom",177,59);
+    // .about-us__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("column-gap",222,100,0,1400,1024);
+        
+        flex-wrap: wrap;
+        @media screen and (max-width:1024px) {
+            justify-content: center;
+            @include adaptiveValue("row-gap",60,46,0,1024,320);
+        }
+    }
+
+    
+    &__image{
+        flex: 0 1 383px;
+        @media screen and (max-width:$mobileSmall) {
+            flex: 0 1 283px;
+            height: 350px;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+
+    // .about-us__content
+
+    &__content {
+        flex: 0 1 484px;
+        
+    }
+    &__title{
+        @include adaptiveValue("margin-bottom",55,22);
+    }
+    // .about-us__article
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("row-gap",20,10);
+        @include adaptiveValue("margin-bottom",34,36);
+    }
+
+    // .about-us__text
+
+    &__text {
+        line-height: 133%;
+        @media screen and (max-width:$mobileSmall) {
+            font-size: rem(16);
+            & span{
+                line-height: 200%;
+            }
+        } 
+        
+    }
+
+    &__button{
+        @include adaptiveValue("font-size",20,19);
+        padding: 9px 18px;
+    }
+}
+
+
