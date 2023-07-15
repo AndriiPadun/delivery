@@ -101,6 +101,24 @@ const config = {
 						}
 					}
 				]
+			}, {
+				test: /\.(jsx)$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'string-replace-loader',
+						options: {
+							search: '@img',
+							replace: 'img',
+							flags: 'g'
+						}
+					}, {
+						loader: "babel-loader",
+						options: {
+							presets: ["@babel/preset-react"]
+						}
+					}
+				],
 			}
 		],
 	},

@@ -10,7 +10,7 @@
 // import Swiper, { Navigation } from 'swiper';
 
 import Swiper from 'swiper';
-import { Navigation} from 'swiper/modules';
+import {Navigation} from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
