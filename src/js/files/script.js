@@ -103,8 +103,7 @@ tariffs.forEach(tariff => {
       choiceTariff.innerText = tariffTitle.textContent;
 
       changeBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-
+       
         if (blockTariff.dataset.show === '1') {
           e.preventDefault();
           inputName = nameInput.value;
@@ -157,19 +156,19 @@ blockFinishBtn.addEventListener('click', function (e) {
 
 if (popup) {
   popup.addEventListener("click", function(e){
-   if ( e.target.hasAttribute("data-close")) {
+   if ( e.target.hasAttribute('data-close') || e.target.classList.contains('popup__wrapper') ) {
     form.reset();
     formBlock.dataset.show = 1;
     blockFinish.dataset.show = 2;
     checkBlock.dataset.show = 2;
     blockTariff.dataset.show = 2;
     tariffs.forEach(tariff => tariff.classList.remove('active-item'));
+    console.log('1');
    }
   })
 }
-  
 });
-
+// відслідковувати закриття поп апа пофіксити баг з вибором тарифу і тим що при першому виборі поп ап закривається (треба буде правильно підібрати умову)
 
 
 
