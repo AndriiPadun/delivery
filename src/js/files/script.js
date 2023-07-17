@@ -69,7 +69,7 @@ registrationBtn.addEventListener('click', function (e) {
 
     if (checkBlock.dataset.show === '1') {
       tariffResult.innerText = choiceTariff.textContent;
-      nameInputResult.innerText = name;
+      nameInputResult.innerText = inputName;
       phoneInputResult.innerText = phone;
     }
   }
@@ -96,7 +96,7 @@ toChangeBtn.addEventListener('click', function (e) {
 const tariffs = popup.querySelectorAll('.block-tariff__item');
 tariffs.forEach(tariff => {
   tariff.addEventListener('click', function (e) {
-    tariffs.forEach(item => item.classList.remove('active-item'));
+    tariffs.forEach(tariff => tariff.classList.remove('active-item'));
     e.target.classList.add('active-item');
 
     if (e.target.classList.contains('active-item')) {
@@ -126,7 +126,7 @@ tariffs.forEach(tariff => {
 
           if (checkBlock.dataset.show === '1') {
             tariffResult.innerText = tariffTitle.textContent;
-            nameInputResult.innerText = name;
+            nameInputResult.innerText = inputName;
             phoneInputResult.innerText = phone;
           }
         }
