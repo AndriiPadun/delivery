@@ -106,6 +106,9 @@ tariffs.forEach(tariff => {
         e.preventDefault();
 
         if (blockTariff.dataset.show === '1') {
+          e.preventDefault();
+          inputName = nameInput.value;
+          phone = phoneInput.value;
           formBlock.dataset.show = 1;
           blockTariff.dataset.show = 2;
         }
@@ -123,7 +126,7 @@ tariffs.forEach(tariff => {
           checkBlock.dataset.show = 1;
 
           if (checkBlock.dataset.show === '1') {
-            tariffResult.innerText = tariffTitle.textContent;
+            choiceTariff.innerText = tariffTitle.textContent;
             nameInputResult.innerText = inputName;
             phoneInputResult.innerText = phone;
           }
@@ -160,6 +163,7 @@ if (popup) {
     blockFinish.dataset.show = 2;
     checkBlock.dataset.show = 2;
     blockTariff.dataset.show = 2;
+    tariffs.forEach(tariff => tariff.classList.remove('active-item'));
    }
   })
 }
