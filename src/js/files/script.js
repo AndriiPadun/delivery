@@ -22,9 +22,7 @@ window.addEventListener("load", function () {
     imageClose.dataset.box = 2;
     imageOpen.dataset.box = 1;
   });
-});
-
-const popup = document.querySelector('.popup');
+  const popup = document.querySelector('.popup');
 const registrationBtn = popup.querySelector('.form-popup__button');
 const formCheckbox = popup.querySelector('.form-popup__checkbox');
 const phoneInput = document.getElementById('phone');
@@ -97,7 +95,7 @@ const tariffs = popup.querySelectorAll('.block-tariff__item');
 tariffs.forEach(tariff => {
   tariff.addEventListener('click', function (e) {
     tariffs.forEach(tariff => tariff.classList.remove('active-item'));
-    e.target.classList.add('active-item');
+    tariff.classList.add('active-item');
 
     if (e.target.classList.contains('active-item')) {
       const tariffName = tariff.closest('.block-tariff__item');
@@ -165,9 +163,10 @@ if (popup) {
    }
   })
 }
+  
+});
 
 
-    
 
 
 
