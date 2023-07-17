@@ -5,10 +5,18 @@
 window.addEventListener("load", function () {
   const closedBox = document.querySelector('.delivery__box');
   const hiddenSlider = document.querySelector('.delivery__wrapper');
+  const sliderBtn = document.querySelector('.swiper-button-next');
   const imageClose = closedBox.querySelector('.box-close');
   const imageOpen = closedBox.querySelector('.box-open');
 
   closedBox.addEventListener('mouseover', function () {
+    closedBox.classList.add('open-box');
+    hiddenSlider.classList.add('show');
+    imageClose.dataset.box = 2;
+    imageOpen.dataset.box = 1;
+  });
+
+  sliderBtn.addEventListener('click', function () {
     closedBox.classList.add('open-box');
     hiddenSlider.classList.add('show');
     imageClose.dataset.box = 2;
