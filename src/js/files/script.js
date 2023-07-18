@@ -105,15 +105,10 @@ tariffs.forEach(tariff => {
 
       changeBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        console.log(1);
         choiceTariff.innerText = tariffTitle.textContent;
         if (blockTariff.dataset.show === '1') {
-         
-          // inputName = nameInput.value;
-          // phone = phoneInput.value;
           formBlock.dataset.show = 1;
           blockTariff.dataset.show = 2;
-          console.log(2);
         }
       });
 
