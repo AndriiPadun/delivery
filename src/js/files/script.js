@@ -31,7 +31,7 @@ const formBlock = popup.querySelector('.popup__block-form');
 const checkBlock = popup.querySelector('.block-check');
 const nameInputResult = document.getElementById('full-name');
 const phoneInputResult = document.getElementById('phone-number');
-const tariffResult = document.getElementById('tariff');
+let tariffResult = document.getElementById('tariff');
 const backToFormBtn = document.getElementById('back-to');
 const toChangeBtn = document.getElementById('change');
 const changeBtn = document.querySelector('.block-tariff__change');
@@ -44,7 +44,7 @@ const form = popup.querySelector('.form-popup');
 let inputName;
 let phone;
 
-const choiceTariff = document.querySelector('.choice__name');
+let choiceTariff = document.querySelector('.choice__name');
 const choiceBtns = document.querySelectorAll('.card__button');
 choiceBtns.forEach(choiceBtn => {
   choiceBtn.addEventListener('click', function (e) {
@@ -55,7 +55,7 @@ choiceBtns.forEach(choiceBtn => {
 });
 
 registrationBtn.addEventListener('click', function (e) {
-  e.preventDefault();
+  
   const requiredInputs = document.querySelectorAll('input[required]');
   const isAllInputsFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
 
@@ -64,13 +64,14 @@ registrationBtn.addEventListener('click', function (e) {
     phone = phoneInput.value;
     formBlock.dataset.show = 2;
     checkBlock.dataset.show = 1;
-
+e.preventDefault();
     if (checkBlock.dataset.show === '1') {
       tariffResult.innerText = choiceTariff.textContent;
       nameInputResult.innerText = inputName;
       phoneInputResult.innerText = phone;
     }
   }
+  
 });
 
 backToFormBtn.addEventListener('click', function (e) {
@@ -97,24 +98,27 @@ tariffs.forEach(tariff => {
     tariffs.forEach(tariff => tariff.classList.remove('active-item'));
     tariff.classList.add('active-item');
 
-    if (e.target.classList.contains('active-item')) {
+    if (tariff.classList.contains('active-item')) {
       const tariffName = tariff.closest('.block-tariff__item');
       const tariffTitle = tariffName.querySelector('.block-tariff__title');
       choiceTariff.innerText = tariffTitle.textContent;
 
       changeBtn.addEventListener('click', function (e) {
-       
+        e.preventDefault();
+        console.log(1);
+        choiceTariff.innerText = tariffTitle.textContent;
         if (blockTariff.dataset.show === '1') {
-          e.preventDefault();
-          inputName = nameInput.value;
-          phone = phoneInput.value;
+         
+          // inputName = nameInput.value;
+          // phone = phoneInput.value;
           formBlock.dataset.show = 1;
           blockTariff.dataset.show = 2;
+          console.log(2);
         }
       });
 
       registrationBtn.addEventListener('click', function (e) {
-        e.preventDefault();
+        
         const requiredInputs = document.querySelectorAll('input[required]');
         const isAllInputsFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
 
@@ -123,9 +127,9 @@ tariffs.forEach(tariff => {
           phone = phoneInput.value;
           formBlock.dataset.show = 2;
           checkBlock.dataset.show = 1;
-
+          e.preventDefault();
           if (checkBlock.dataset.show === '1') {
-            choiceTariff.innerText = tariffTitle.textContent;
+            tariffResult.innerText = tariffTitle.textContent;
             nameInputResult.innerText = inputName;
             phoneInputResult.innerText = phone;
           }
@@ -168,7 +172,6 @@ if (popup) {
   })
 }
 });
-// відслідковувати закриття поп апа пофіксити баг з вибором тарифу і тим що при першому виборі поп ап закривається (треба буде правильно підібрати умову)
 
 
 
