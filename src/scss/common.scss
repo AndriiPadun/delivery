@@ -46,6 +46,7 @@ font-weight: 700;
 line-height: 100%;
 letter-spacing: -0.01em;
 color: $mainColor;
+opacity: 0;
 }
 .bold-text{
 	font-weight: 600;
@@ -145,3 +146,18 @@ color: $mainColor;
 	}
 
 }
+* > ._watcher-view{
+	animation: show 1s linear 0s 1 alternate both;
+} 
+@keyframes show {
+	from{
+	 opacity: 0;
+	 transform: translate(-100%,0);
+	}
+	 to{
+		 opacity: 1;
+		 transform: translate(0,0);
+	 }
+ }
+
+ 

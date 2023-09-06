@@ -29,6 +29,7 @@ background-size: contain;
 
     
     &__image{
+        opacity: 0;
         flex: 0 1 383px;
         @media screen and (max-width:$mobileSmall) {
             flex: 0 1 283px;
@@ -46,7 +47,7 @@ background-size: contain;
 
     &__content {
         flex: 0 1 484px;
-        
+        opacity: 0;
     }
     &__title{
         @include adaptiveValue("margin-bottom",55,22);
